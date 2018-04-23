@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "node-wiring-pi": "^0.0.4"
+    "wiring-pi": "^2.2.1"
   }
 }
