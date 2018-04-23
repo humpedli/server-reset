@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM hypriot/rpi-node
 
 # Create app directory
 WORKDIR /usr/src/app
