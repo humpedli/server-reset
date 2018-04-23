@@ -1,0 +1,12 @@
+{
+  "name": "server-reset",
+  "version": "1.0.0",
+  "description": "Reset a server with raspberry pi",
+  "author": "Tamas Kinsztler",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+  }
+}
