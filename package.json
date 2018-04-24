@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "wiring-pi": "^2.2.1"
+    "rpi-gpio": "^0.9.1"
   }
 }

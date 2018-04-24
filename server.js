@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-cost wpi = require('wiring-pi');
+const gpio = require('rpi-gpio');
 
 wpi.setup('wpi');
 
@@ -13,9 +13,9 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
   res.send('Hello world\n');
-  wpi.pinMode(4, wpi.OUTPUT);
-  setTimeout(function() {
-    wpi.digitalWrite(4, 1);
+  gpio.setup(4, gpio.DIR_OUT, () => { gpio.write(4, true) });
+  setTimeout(() => {
+    gpio.write(4, false);
   }, 300);
 });
 
