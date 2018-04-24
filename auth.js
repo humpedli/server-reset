@@ -1,6 +1,6 @@
 const auth = require('basic-auth');
 
-const admins = { 'hump': { password: 'maki1337' }, };
+const admins = { 'hump': { password: 'e#hP4+J2cxa3W&RX' }, };
 
 module.exports = function (request, response, next) {
   var user = auth(request);
