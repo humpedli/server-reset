@@ -2,17 +2,17 @@
 
 const express = require('express');
 const gpio = require('rpi-gpio');
-const gpiop = gpio.promise
+const path = require("path");
 
 const PORT = 12000;
 const HOST = '0.0.0.0';
 const app = express();
 
 console.log(`Initializing GPIO 11 port...`)
-gpiop.setup(11, gpio.DIR_HIGH);
+gpio.setup(11, gpio.DIR_HIGH);
 
 app.get('/', (req, res) => {
-	res.sendFile('index.html');
+	res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/reset', (req, res) => {
@@ -28,7 +28,11 @@ app.get('/reset', (req, res) => {
 });
 
 app.get('/success', (req, res) => {
-	res.sendFile('success.html');
+	res.sendFile(path.join(__dirname + '/success.html'));
+});
+
+app.get('/style.css', (req, res) => {
+        res.sendFile(path.join(__dirname + '/style.css'));
 });
 
 app.listen(PORT, HOST);
