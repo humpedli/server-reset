@@ -2,11 +2,14 @@
 
 const express = require('express');
 const gpio = require('rpi-gpio');
-const path = require("path");
+const path = require('path');
+const auth = require('./auth');
 
 const PORT = 12000;
 const HOST = '0.0.0.0';
 const app = express();
+
+app.use(auth);
 
 console.log(`Initializing GPIO 11 port...`)
 gpio.setup(11, gpio.DIR_HIGH);
