@@ -2,8 +2,7 @@
 
 const express = require('express');
 const gpio = require('rpi-gpio');
-
-wpi.setup('wpi');
+const gpiop = gpio.promise
 
 // Constants
 const PORT = 12000;
@@ -11,12 +10,15 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+
+gpiop.setup(11, gpio.DIR_HIGH);
+
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
-  gpio.setup(4, gpio.DIR_OUT, () => { gpio.write(4, true) });
+  gpio.write(11, false);
   setTimeout(() => {
-    gpio.write(4, false);
+    gpio.write(11, true);
   }, 300);
+  res.send('Hello world\n');
 });
 
 app.listen(PORT, HOST);
