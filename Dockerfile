@@ -1,4 +1,6 @@
-FROM node:alpine
+FROM resin/raspberrypi3-alpine-node:onbuild
+
+ENV INITSYSTEM on
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
