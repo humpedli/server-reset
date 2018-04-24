@@ -1,9 +1,9 @@
-FROM resin/raspberrypi3-alpine-node
+FROM node:alpine
 
 WORKDIR /usr/src/app
 
 COPY package.json ./
-RUN npm install --unsafe
+RUN npm install
 COPY . .
 
 EXPOSE 12000
